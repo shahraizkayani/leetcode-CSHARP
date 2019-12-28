@@ -1,0 +1,18 @@
+
+ public class Solution {
+    public string ReverseWords(string s) {
+      string [] s12=s.Trim().Split(' ');
+        string reverse ="";
+        Stack <string> s1= new Stack<string>();
+        foreach(string ch in s12){
+            s1.Push(ch);}
+        foreach(string ch in s12){
+            reverse= reverse + " ";
+            reverse+=s1.Pop();
+           reverse=reverse.Trim();
+              
+        }
+     
+        return reverse.Trim();
+    }
+}
