@@ -1,0 +1,41 @@
+/*
+Given two arrays, write a function to compute their intersection.
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [9,4]
+Note:
+
+Each element in the result must be unique.
+The result can be in any order.
+
+
+
+*/
+public class Solution {
+    public int[] Intersection(int[] nums1, int[] nums2) {
+        int number=0;
+        Stack<int> hs=new Stack<int>();
+        HashSet<int> hs1=new HashSet<int>();
+        foreach(int i in nums1){
+            hs.Push(i);
+        }
+        for(int i=0;i<nums2.Length;i++){
+            if((hs.Contains(nums2[i]))){
+            hs1.Add(nums2[i]);}
+            
+        
+        
+        }
+             return hs1.ToArray();
+        
+        
+        
+        
+    }
+}
