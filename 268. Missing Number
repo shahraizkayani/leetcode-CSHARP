@@ -16,9 +16,9 @@ public class Solution {
     public int MissingNumber(int[] nums) {
       int number=0;
         int count=0;
-      Stack<int> st=new Stack<int>();
+      HashSet<int> st=new HashSet<int>();
         for(int i=0;i<nums.Length;i++){
-            st.Push(nums[i]);
+            st.Add(nums[i]);
         }
         
         for(int i=0;i<=nums.Length;i++){
