@@ -1,0 +1,57 @@
+/*
+Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+
+The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
+
+You may assume the integer does not contain any leading zero, except the number 0 itself.
+
+Example 1:
+
+Input: [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Example 2:
+
+Input: [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+*/
+public class Solution {
+    public int[] PlusOne(int[] digits) {
+        string s="";
+        foreach(int i in digits){
+            s+=i.ToString();
+        }
+        
+         BigInteger num;
+        bool success= BigInteger.TryParse(s, out num);
+        if(success){
+        
+        num+=1;
+            Console.WriteLine(num);
+        Stack<BigInteger> stack1=new Stack<BigInteger>();
+        while(num>0){
+            stack1.Push(num%10);
+            num=num/10;
+        }
+      int [] arr3=new int[stack1.Count()];
+            BigInteger [] arr4=stack1.ToArray();
+           for(int i=0;i<arr4.Length;i++){
+               arr3[i]=(int)arr4[i];
+           }
+           
+            return arr3;
+   //     return stack1.ToArray();
+        
+        }
+        else {
+            int [] nums3=new int[1]{0};
+            return nums3;
+        }
+        
+        
+        
+        
+       
+    }
+}
