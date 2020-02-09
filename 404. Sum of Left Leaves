@@ -1,0 +1,53 @@
+/*
+Find the sum of all left leaves in a given binary tree.
+
+Example:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
+
+
+*/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public int SumOfLeftLeaves(TreeNode root) {
+       var list = new List<int>();
+        if ( root == null) {
+            return list.Sum();
+        }
+     var stack =   new Stack<TreeNode>();
+        stack.Push(root);
+        
+        while(stack.Count > 0){
+            TreeNode s = stack.Pop();
+            
+            if(s.left != null){
+             
+                if(s.left.right == null && s.left.left ==null){
+                list.Add(s.left.val);}
+            stack.Push(s.left);}
+             if(s.right != null){
+               
+            stack.Push(s.right);}
+            
+            
+        }
+        foreach(int s in list){
+            Console.Write(s);
+        }
+        return list.Sum();
+    }
+}
