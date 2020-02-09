@@ -1,0 +1,75 @@
+/*
+Given a string s formed by digits ('0' - '9') and '#' . We want to map s to English lowercase characters as follows:
+
+Characters ('a' to 'i') are represented by ('1' to '9') respectively.
+Characters ('j' to 'z') are represented by ('10#' to '26#') respectively. 
+Return the string formed after mapping.
+
+It's guaranteed that a unique mapping will always exist.
+
+ 
+
+Example 1:
+
+Input: s = "10#11#12"
+Output: "jkab"
+Explanation: "j" -> "10#" , "k" -> "11#" , "a" -> "1" , "b" -> "2".
+Example 2:
+
+Input: s = "1326#"
+Output: "acz"
+Example 3:
+
+Input: s = "25#"
+Output: "y"
+Example 4:
+
+Input: s = "12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#"
+Output: "abcdefghijklmnopqrstuvwxyz"
+ 
+
+Constraints:
+
+1 <= s.length <= 1000
+s[i] only contains digits letters ('0'-'9') and '#' letter.
+s will be valid string such that mapping is always possible.
+
+*/
+using System.Text.RegularExpressions;
+public class Solution {
+    public string FreqAlphabets(string s) {
+        
+        string j = s;
+        
+                j = j.Replace("10#","j");
+                j = j.Replace("11#", "k");
+                j = j.Replace("12#", "l");
+                j = j.Replace("13#", "m"); 
+                j = j.Replace("14#", "n");
+                j = j.Replace("15#", "o");
+                j = j.Replace("16#", "p");
+                j = j.Replace("17#", "q");
+                j = j.Replace("18#", "r");
+                j = j.Replace("19#", "s");
+                j = j.Replace("20#", "t");
+                j = j.Replace("21#", "u");
+                j = j.Replace("22#", "v");
+                j = j.Replace("23#", "w");
+                j = j.Replace("24#", "x");
+                j = j.Replace("25#", "y");
+                j = j.Replace("26#", "z");
+        
+        
+             j = j.Replace("1", "a");
+             j = j.Replace("2", "b");
+             j = j.Replace("3", "c"); 
+             j = j.Replace("4", "d");
+             j = j.Replace("5", "e");
+             j = j.Replace("6", "f");
+             j = j.Replace("7", "g");
+             j = j.Replace("8", "h");
+             j = j.Replace("9", "i");
+        
+        return j;
+    }
+}
