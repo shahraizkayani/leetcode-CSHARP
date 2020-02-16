@@ -1,0 +1,66 @@
+/*
+Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
+
+ 
+
+Example 1:
+
+Input: "ab-cd"
+Output: "dc-ba"
+Example 2:
+
+Input: "a-bC-dEf-ghIj"
+Output: "j-Ih-gfE-dCba"
+Example 3:
+
+Input: "Test1ng-Leet=code-Q!"
+Output: "Qedo1ct-eeLg=ntse-T!"
+ 
+
+Note:
+
+S.length <= 100
+33 <= S[i].ASCIIcode <= 122 
+S doesn't contain \ or "
+
+
+
+
+
+*/
+public class Solution {
+    public string ReverseOnlyLetters(string S) {
+        
+        char [] arr = S.ToCharArray();
+            int i = 0;
+        int j = arr.Length-1;
+        char index;
+        while(i < j){
+            int k = (int) arr[i];
+            
+           int l = (int) arr[j];
+            
+            if(k >= 33 && k <=64 || k>=91 && k<=96){
+              
+                i++;
+                continue;
+            }
+            if(l >= 33 && l <=64 || l>=91 && l<=96){
+              
+                j--;
+                continue;
+            }
+           index = arr[i];
+                
+            arr[i] = arr[j];
+            arr[j] = index;
+             i++;
+            j--;
+           
+           
+            
+           
+        }
+        return new string(arr);
+    }
+}
