@@ -1,0 +1,63 @@
+/*
+
+Write a function that takes a string as input and reverse only the vowels of a string.
+
+Example 1:
+
+Input: "hello"
+Output: "holle"
+Example 2:
+
+Input: "leetcode"
+Output: "leotcede"
+Note:
+The vowels does not include the letter "y".
+
+
+
+*/
+public class Solution {
+    public string ReverseVowels(string s) {
+        
+        char [] arr = s.ToCharArray();
+        int i = 0;
+        int j = arr.Length-1;
+        char index;
+        
+        while(i < j){
+            int k = (int) arr[i];
+
+           int l = (int) arr[j];
+        
+            if(k != 65 && k != 69  && k != 73 && k != 79 && k != 85 && 
+              k != 97 && k != 101  && k != 105 && k!= 111 && k != 117
+              ){
+             
+                  
+                i++;
+                continue;
+            }
+          
+           if(l != 65 && l !=69  && l!=73 && l!=79 && l != 85 && 
+              l != 97 && l !=101  && l!=105 && l!=111 && l != 117
+              ){
+
+                j--;
+                continue;
+            }
+             
+           index = arr[i];
+
+            arr[i] = arr[j];
+            arr[j] = index;
+             i++;
+            j--;
+
+
+
+
+        }
+        return new string(arr);
+        
+    }
+}
