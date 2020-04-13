@@ -46,8 +46,9 @@ public class Solution {
         
         foreach(string i in words){
             bool success = true;
-            var dict1 = new Dictionary<char,int>(dict);
+           
             if(i.Length <= chars.Length){
+             var dict1 = new Dictionary<char,int>(dict);
            foreach(char ch in i ){
                if(dict1.ContainsKey(ch)){
                    if(dict1[ch] ==1){
